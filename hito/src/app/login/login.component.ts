@@ -20,7 +20,6 @@ export class LoginComponent {
     this.submitted = true;
     this._http.loginUser(this.model.name, this.model.password)
       .subscribe(response => this.router.navigate(['authorized']), err => {
-        
       })
   }
 
