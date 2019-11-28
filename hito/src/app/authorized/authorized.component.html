@@ -1,1 +1,4 @@
-<p>authorized works!</p>
+<div *ngFor="let user of users; index as i">
+  {{i}}. {{user.email}} <span *ngIf="isFirst">default</span>
+</div>
+

@@ -4,11 +4,11 @@ import { RequestService } from '../request.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent {
+export class RegisterComponent {
 
   constructor(private _http:RequestService, private router: Router) { }
 
@@ -18,14 +18,17 @@ export class LoginComponent {
 
   onSubmit() {
     this.submitted = true;
-    this._http.loginUser(this.model.email, this.model.password)
+    console.log(this.model)
+    this._http.registerUser(this.model)
       .subscribe((response: {
         token: string
       }) => {
-        this.router.navigate(['authorized']);
+        console.log(response)
         localStorage.setItem("token", response.token);
+        this.router.navigate(['authorized']);
       }, (err) => {
-        alert(err.error.message);
+        console.log(err)
+        alert(err.error.error.message);
       })
   }
 

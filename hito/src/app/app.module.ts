@@ -8,9 +8,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { AuthorizedComponent } from './authorized/authorized.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'authorized', component: AuthorizedComponent, data: { title: 'hola' }}
 ]
 
@@ -18,6 +20,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
+    RegisterComponent,
     AuthorizedComponent
   ],
   imports: [

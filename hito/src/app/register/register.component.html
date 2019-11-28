@@ -1,0 +1,75 @@
+<p>register works!</p>
+
+<div class="container">
+  <h1> Register </h1>
+  <form (ngSubmit)="onSubmit()" #login="ngForm">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input 
+        type="text"
+        class="form-control"
+        id="email"
+        [(ngModel)]="model.email" name="email"
+        required
+        #email="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        type="password"
+        class="form-control"
+        id="password"
+        [(ngModel)]="model.password" name="password"
+        required
+        #password="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="firstname">Firstname</label>
+      <input 
+        type="firstname"
+        class="form-control"
+        id="firstname"
+        [(ngModel)]="model.firstname" name="firstname"
+        required
+        #firstname="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="surname">Surname</label>
+      <input 
+        type="surname"
+        class="form-control"
+        id="surname"
+        [(ngModel)]="model.surname" name="surname"
+        required
+        #surname="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="avatarImage">AvatarImage</label>
+      <input 
+        type="avatarImage"
+        class="form-control"
+        id="avatarImage"
+        [(ngModel)]="model.avatarImage" name="avatarImage"
+        required
+        #avatarImage="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input 
+        type="phone"
+        class="form-control"
+        id="phone"
+        [(ngModel)]="model.phone" name="phone"
+        required
+        #phone="ngModel">
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!login.form.valid">Submit</button>
+    
+  </form>
+</div>
